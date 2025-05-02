@@ -49,10 +49,10 @@ def save_to_excel():
     else:
         remark = "Passed"
 
-    wb = load_workbook("Userdata.xlsx")
-    ws = wb["UserData"]
+    wb = load_workbook("student_scores.xlsx")
+    ws = wb["student_scores"]
     ws.append([name, grade, remark])
-    wb.save("Userdata.xlsx")
+    wb.save("student_scores.xlsx")
     messagebox.showinfo("Success", "Data Saved Successfully")
 
 
@@ -101,8 +101,8 @@ def open_view_window():
     total = 0
     count = 0
 
-    wb = load_workbook("Userdata.xlsx")
-    ws = wb["UserData"]
+    wb = load_workbook("student_scores.xlsx")
+    ws = wb["student_scores"]
 
     for row in ws.iter_rows(min_row=2, values_only=True):
         tree.insert("", "end", values=row)
